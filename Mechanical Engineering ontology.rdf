@@ -1,0 +1,461 @@
+<rdf:RDF
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+xmlns:owl="http://www.w3.org/2002/07/owl#"
+xmlns:dc="http://purl.org/dc/elements/1.1/"
+xmlns:Mechanical-Engineering-Ontology="http://www.example.com/Mechanical-Engineering-Ontology#">
+
+<!-- OWL Header-->
+<owl:Ontology rdf:about="http://www.example.com/Mechanical-Engineering-Ontology">
+    <dc:title>Mechanical-Engineering-Ontology</dc:title>
+</owl:Ontology>
+
+<!-- OWL Thing -->
+<owl:Class rdf:about="http://www.w3.org/2002/07/owl#Thing">
+    <rdfs:label>OWL Thing</rdfs:label>
+</owl:Class>
+
+<!-- OWL Class Definition - Engineering -->
+<owl:Class rdf:about="http://www.example.com/Mechanical-Engineering-Ontology#Engineering">
+    <rdfs:label>Engineering</rdfs:label>
+    <rdfs:comment>Main Class</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<!-- OWL Sub Class Definition - Mechanical Engineering -->
+<owl:Class rdf:about="http://www.example.com/Mechanical-Engineering-Ontology#Mechanical-Engineering">
+    <rdfs:label>Mechanical Engineering</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.example.com/Mechanical-Engineering-Ontology#Engineering"/>
+</owl:Class>
+
+
+<!-- OWL Class Definition - Engineering design -->
+<owl:Class rdf:about="http://www.example.com/Mechanical-Engineering-Ontology#Engineering-Design">
+    <rdfs:label>Engineering-Design</rdfs:label>
+    <rdfs:comment>
+        Engineering Design is a broader subject encompassing various sub-parts that contribute to the process of creating 
+        and developing physical objects and systems.
+    </rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.example.com/Mechanical-Engineering-Ontology#Mechanical-Engineering"/>
+</owl:Class>
+
+<!-- OWL Sub Class Definition - Design-Methodologies -->
+<owl:Class rdf:about="http://www.example.com/Mechanical-Engineering-Ontology#Design-Methodologies">
+    <rdfs:label>Design-Methodologies</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.example.com/Mechanical-Engineering-Ontology#Engineering-Design"/>
+</owl:Class>
+
+<!-- Define the Design-Thinking instance of Class Design-Methodologies-->
+<rdf:Description rdf:about="http://www.example.com/Mechanical-Engineering-Ontology#Design-Thinking">
+    <rdfs:label>Design-Thinking</rdfs:label>
+    <!-- Design-Thinking is an individual (instance) of the Design-Methodologies class -->
+    <rdf:type rdf:resource="http://www.example.com/Mechanical-Engineering-Ontology#Design-Methodologies"/>
+</rdf:Description>
+
+<!-- Define the CAD-Software data property -->
+<owl:DatatypeProperty rdf:about="http://www.example.com/Mechanical-Engineering-Ontology#CAD-Software"/>
+
+
+<!-- Define the Computer-Aided-Design-(CAD) instance of Class Design-Methodologies-->
+<rdf:Description rdf:about="http://www.example.com/Mechanical-Engineering-Ontology#Computer-Aided-Design-(CAD)">
+    <rdfs:label>Computer-Aided-Design-(CAD)</rdfs:label>
+    <!-- Computer-Aided-Design-(CAD) is an individual (instance) of the Design-Methodologies class -->
+    <rdf:type rdf:resource="http://www.example.com/Mechanical-Engineering-Ontology#Design-Methodologies"/>
+    <Mechanical-Engineering-Ontology:CAD-Software>Autodesk-AutoCAD</Mechanical-Engineering-Ontology:CAD-Software>
+    <Mechanical-Engineering-Ontology:CAD-Software>SolidWorks</Mechanical-Engineering-Ontology:CAD-Software>
+    <Mechanical-Engineering-Ontology:CAD-Software>Fusion-360</Mechanical-Engineering-Ontology:CAD-Software>
+    <Mechanical-Engineering-Ontology:CAD-Software>Creo-Parametric</Mechanical-Engineering-Ontology:CAD-Software>
+    <Mechanical-Engineering-Ontology:CAD-Software>Sketchup-Pro</Mechanical-Engineering-Ontology:CAD-Software>
+
+</rdf:Description>
+
+<!-- Define the Design-for-Manufacturing-(DFM) instance of Class Design-Methodologies-->
+<rdf:Description rdf:about="http://www.example.com/Mechanical-Engineering-Ontology#Design-for-Manufacturing-(DFM)">
+    <rdfs:label>Design-for-Manufacturing-(DFM)</rdfs:label>
+    <!-- Design-for-Manufacturing-(DFM) is an individual (instance) of the Design-Methodologies class -->
+    <rdf:type rdf:resource="http://www.example.com/Mechanical-Engineering-Ontology#Design-Methodologies"/>
+</rdf:Description>
+
+<!-- Define the Design-for-Six-Sigma-(DFSS) instance of Class Design-Methodologies-->
+<rdf:Description rdf:about="http://www.example.com/Mechanical-Engineering-Ontology#Design-for-Six-Sigma-(DFSS)">
+    <rdfs:label>Design-for-Six-Sigma-(DFSS)</rdfs:label>
+    <!-- Design-for-Six-Sigma-(DFSS) is an individual (instance) of the Design-Methodologies class -->
+    <rdf:type rdf:resource="http://www.example.com/Mechanical-Engineering-Ontology#Design-Methodologies"/>
+</rdf:Description>
+
+<!-- OWL Sub Class Definition - Simulation-and-Analysis -->
+<owl:Class rdf:about="http://www.example.com/Mechanical-Engineering-Ontology#Simulation-and-Analysis">
+    <rdfs:label>Simulation-and-Analysis</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.example.com/Mechanical-Engineering-Ontology#Engineering-Design"/>
+</owl:Class>
+
+<!-- Define the Structural-Analysis instance of Class Simulation-and-Analysis-->
+<rdf:Description rdf:about="http://www.example.com/Mechanical-Engineering-Ontology#Structural-Analysis">
+    <rdfs:label>Structural-Analysis</rdfs:label>
+    <!-- Structural-Analysis is an individual (instance) of the Simulation-and-Analysis class -->
+    <rdf:type rdf:resource="http://www.example.com/Mechanical-Engineering-Ontology#Simulation-and-Analysis"/>
+</rdf:Description>
+
+<!-- Define the Thermal-Analysis instance of Class Simulation-and-Analysis)-->
+<rdf:Description rdf:about="http://www.example.com/Mechanical-Engineering-Ontology#Thermal-Analysis">
+    <rdfs:label>Thermal-Analysis</rdfs:label>
+    <!-- Thermal-Analysis is an individual (instance) of the Simulation-and-Analysis class -->
+    <rdf:type rdf:resource="http://www.example.com/Mechanical-Engineering-Ontology#Simulation-and-Analysis"/>
+</rdf:Description>
+
+<!-- OWL Sub Class Definition - Optimization -->
+<owl:Class rdf:about="http://www.example.com/Mechanical-Engineering-Ontology#Optimization">
+    <rdfs:label>Optimization</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.example.com/Mechanical-Engineering-Ontology#Engineering-Design"/>
+</owl:Class>
+
+<!-- Define the Parameter-Optimization instance of Class Optimization-->
+<rdf:Description rdf:about="http://www.example.com/Mechanical-Engineering-Ontology#Parameter-Optimization">
+    <rdfs:label>Parameter-Optimization</rdfs:label>
+    <!-- Parameter-Optimization is an individual (instance) of the Optimization class -->
+    <rdf:type rdf:resource="http://www.example.com/Mechanical-Engineering-Ontology#Optimization"/>
+</rdf:Description>
+
+
+
+<!--Knowledge Discovery Branch=========================================================================-->
+
+
+<!-- OWL Class Definition - Knowledge Discovery -->
+<owl:Class rdf:about="http://www.example.com/Mechanical-Engineering-Ontology#Knowledge-Discovery">
+    <rdfs:label>Knowledge-Discovery</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.example.com/Mechanical-Engineering-Ontology#Mechanical-Engineering"/>
+</owl:Class>
+
+<!-- OWL Sub Class Definition - Data-Integration -->
+<owl:Class rdf:about="http://www.example.com/Mechanical-Engineering-Ontology#Data-Integration">
+    <rdfs:label>Data-Integration</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.example.com/Mechanical-Engineering-Ontology#Knowledge-Discovery"/>
+</owl:Class>
+
+<!-- Define the Data-Acquisition instance of Data-Integration Class-->
+<rdf:Description rdf:about="http://www.example.com/Mechanical-Engineering-Ontology#Data-Acquisition">
+    <rdfs:label>Data-Acquisition</rdfs:label>
+    <!-- Data-Acquisition is an individual (instance) of the Data-Integration class -->
+    <rdf:type rdf:resource="http://www.example.com/Mechanical-Engineering-Ontology#Data-Integration"/>
+</rdf:Description>
+
+<!-- Define the Data-Cleaning-and-Preprocessing instance of Data-Integration Class-->
+<rdf:Description rdf:about="http://www.example.com/Mechanical-Engineering-Ontology#Data-Cleaning-and-Preprocessing">
+    <rdfs:label>Data-Cleaning-and-Preprocessing</rdfs:label>
+    <!-- Data-Cleaning-and-Preprocessing is an individual (instance) of the Data-Integration class -->
+    <rdf:type rdf:resource="http://www.example.com/Mechanical-Engineering-Ontology#Data-Integration"/>
+</rdf:Description>
+
+<!-- Define the Data-Standardization-and-Normalization instance of Data-Integration Class-->
+<rdf:Description rdf:about="http://www.example.com/Mechanical-Engineering-Ontology#Data-Standardization-and-Normalization">
+    <rdfs:label>Data-Standardization-and-Normalization</rdfs:label>
+    <!-- Data-Standardization-and-Normalization is an individual (instance) of the Data-Integration class -->
+    <rdf:type rdf:resource="http://www.example.com/Mechanical-Engineering-Ontology#Data-Integration"/>
+</rdf:Description>
+
+<!-- OWL Sub Class Definition - Semantic-Search -->
+<owl:Class rdf:about="http://www.example.com/Mechanical-Engineering-Ontology#Semantic-Search">
+    <rdfs:label>Semantic-Search</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.example.com/Mechanical-Engineering-Ontology#Knowledge-Discovery"/>
+</owl:Class>
+
+<!-- Define the Ontology-Development instance of Semantic-Search Class-->
+<rdf:Description rdf:about="http://www.example.com/Mechanical-Engineering-Ontology#Ontology-Development">
+    <rdfs:label>Ontology-Development</rdfs:label>
+    <!-- Ontology-Development is an individual (instance) of the Semantic-Search class -->
+    <rdf:type rdf:resource="http://www.example.com/Mechanical-Engineering-Ontology#Semantic-Search"/>
+</rdf:Description>
+
+<!-- Define the Text-Mining-and-Natural-Language-Processing-(NLP) instance of Semantic-Search Class-->
+<rdf:Description rdf:about="http://www.example.com/Mechanical-Engineering-Ontology#Text-Mining-and-Natural-Language-Processing-(NLP)">
+    <rdfs:label>Text-Mining-and-Natural-Language-Processing-(NLP)</rdfs:label>
+    <!-- Text-Mining-and-Natural-Language-Processing-(NLP) is an individual (instance) of the Semantic-Search class -->
+    <rdf:type rdf:resource="http://www.example.com/Mechanical-Engineering-Ontology#Semantic-Search"/>
+</rdf:Description>
+
+<!-- Define the Annotation-and-Semantic-Search instance of Semantic-Search Class-->
+<rdf:Description rdf:about="http://www.example.com/Mechanical-Engineering-Ontology#Annotation-and-Semantic-Search">
+    <rdfs:label>Annotation-and-Semantic-Search</rdfs:label>
+    <!-- Annotation-and-Semantic-Search is an individual (instance) of the Semantic-Search class -->
+    <rdf:type rdf:resource="http://www.example.com/Mechanical-Engineering-Ontology#Semantic-Search"/>
+</rdf:Description>
+
+<!-- Define the Knowledge-Graphs instance of Semantic-Search Class-->
+<rdf:Description rdf:about="http://www.example.com/Mechanical-Engineering-Ontology#Knowledge-Graphs">
+    <rdfs:label>Knowledge-Graphs</rdfs:label>
+    <!-- Knowledge-Graphs is an individual (instance) of the Semantic-Search class -->
+    <rdf:type rdf:resource="http://www.example.com/Mechanical-Engineering-Ontology#Semantic-Search"/>
+</rdf:Description>
+
+<!-- OWL Sub Class Definition - Knowledge-Representation -->
+<owl:Class rdf:about="http://www.example.com/Mechanical-Engineering-Ontology#Knowledge-Representation">
+    <rdfs:label>Knowledge-Representation</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.example.com/Mechanical-Engineering-Ontology#Knowledge-Discovery"/>
+</owl:Class>
+
+<!-- Define the Conceptual-Modeling instance of Knowledge-Representation Class-->
+<rdf:Description rdf:about="http://www.example.com/Mechanical-Engineering-Ontology#Conceptual-Modeling">
+    <rdfs:label>Conceptual-Modeling</rdfs:label>
+    <!-- Conceptual-Modeling is an individual (instance) of the Knowledge-Representation class -->
+    <rdf:type rdf:resource="http://www.example.com/Mechanical-Engineering-Ontology#Knowledge-Representation"/>
+</rdf:Description>
+
+<!--Quality Control Branch============================================================================-->
+
+
+<!-- OWL Class Definition - Quality-Control -->
+<owl:Class rdf:about="http://www.example.com/Mechanical-Engineering-Ontology#Quality-Control">
+    <rdfs:label>Quality-Control</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.example.com/Mechanical-Engineering-Ontology#Mechanical-Engineering"/>
+</owl:Class>
+
+<!-- OWL Class Definition - Inspection-Processes -->
+<owl:Class rdf:about="http://www.example.com/Mechanical-Engineering-Ontology#Inspection-Processes">
+    <rdfs:label>Inspection-Processes</rdfs:label>
+    <!-- Subclass of Quality-Control -->
+    <rdfs:subClassOf rdf:resource="http://www.example.com/Mechanical-Engineering-Ontology#Quality-Control"/>
+</owl:Class>
+
+<!-- Define the Dimensional-Inspection instance of Inspection-Processes Class -->
+<rdf:Description rdf:about="http://www.example.com/Mechanical-Engineering-Ontology#Dimensional-Inspection">
+    <!-- Label for the individual -->
+    <rdfs:label>Dimensional-Inspection</rdfs:label>
+    <!-- Dimensional-Inspection is an individual (instance) of the Inspection-Processes class -->
+    <rdf:type rdf:resource="http://www.example.com/Mechanical-Engineering-Ontology#Inspection-Processes"/>
+</rdf:Description>
+
+<!-- Define the Material-Inspection instance of Inspection-Processes Class -->
+<rdf:Description rdf:about="http://www.example.com/Mechanical-Engineering-Ontology#Material-Inspection">
+    <!-- Label for the individual -->
+    <rdfs:label>Material-Inspection</rdfs:label>
+    <!-- Material-Inspection is an individual (instance) of the Inspection-Processes class -->
+    <rdf:type rdf:resource="http://www.example.com/Mechanical-Engineering-Ontology#Inspection-Processes"/>
+</rdf:Description>
+
+<!-- OWL Sub Class Definition - Standards-Compliance This class is a sub class of both  -->
+<owl:Class rdf:about="http://www.example.com/Mechanical-Engineering-Ontology#Standards-Compliance">
+    <rdfs:label>Standards-Compliance</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.example.com/Mechanical-Engineering-Ontology#Engineering-Design"/>
+    <rdfs:subClassOf rdf:resource="http://www.example.com/Mechanical-Engineering-Ontology#Quality-Control"/>
+</owl:Class>
+
+<!-- Define the ISO-Standards instance of Class Standards-Compliance-->
+<rdf:Description rdf:about="http://www.example.com/Mechanical-Engineering-Ontology#ISO-Standards">
+    <rdfs:label>ISO-Standards</rdfs:label>
+    <!-- ISO-Standards is an individual (instance) of the Standards-Compliances -->
+    <rdf:type rdf:resource="http://www.example.com/Mechanical-Engineering-Ontology#Standards-Compliance"/>
+</rdf:Description>
+
+<!-- Define the ASME-Standards instance of Class Standards-Compliance-->
+<rdf:Description rdf:about="http://www.example.com/Mechanical-Engineering-Ontology#ASME-Standards">
+    <rdfs:label>ASME-Standards</rdfs:label>
+    <!-- ASME-Standards is an individual (instance) of the Standards-Compliances -->
+    <rdf:type rdf:resource="http://www.example.com/Mechanical-Engineering-Ontology#Standards-Compliance"/>
+</rdf:Description>
+
+<!-- Define the Certification-Programs instance of Compliance Class -->
+<rdf:Description rdf:about="http://www.example.com/Mechanical-Engineering-Ontology#Certification-Programs">
+    <!-- Label for the individual -->
+    <rdfs:label>Certification-Programs</rdfs:label>
+    <!-- Certification-Programs is an individual (instance) of the Compliance class -->
+    <rdf:type rdf:resource="http://www.example.com/Mechanical-Engineering-Ontology#Standards-Compliance"/>
+</rdf:Description>
+
+<!-- Define the Regulatory-Compliance instance of Compliance Class -->
+<rdf:Description rdf:about="http://www.example.com/Mechanical-Engineering-Ontology#Regulatory-Compliance">
+    <!-- Label for the individual -->
+    <rdfs:label>Regulatory-Compliance</rdfs:label>
+    <!-- Regulatory-Compliance is an individual (instance) of the Compliance class -->
+    <rdf:type rdf:resource="http://www.example.com/Mechanical-Engineering-Ontology#Standards-Compliance"/>
+</rdf:Description>
+
+<!-- OWL Class Definition - Advanced-Quality-Control-Techniques -->
+<owl:Class rdf:about="http://www.example.com/Mechanical-Engineering-Ontology#Advanced-Quality-Control-Techniques">
+    <rdfs:label>Advanced-Quality-Control-Techniques</rdfs:label>
+    <!-- Subclass of Quality-Control -->
+    <rdfs:subClassOf rdf:resource="http://www.example.com/Mechanical-Engineering-Ontology#Quality-Control"/>
+</owl:Class>
+
+<!-- Define the Machine-Vision-Inspection instance of Advanced-Quality-Control-Techniques Class -->
+<rdf:Description rdf:about="http://www.example.com/Mechanical-Engineering-Ontology#Machine-Vision-Inspection">
+    <!-- Label for the individual -->
+    <rdfs:label>Machine-Vision-Inspection</rdfs:label>
+    <!-- Machine-Vision-Inspection is an individual (instance) of the Advanced-Quality-Control-Techniques class -->
+    <rdf:type rdf:resource="http://www.example.com/Mechanical-Engineering-Ontology#Advanced-Quality-Control-Techniques"/>
+</rdf:Description>
+
+<!-- Define the Non-destructive-Testing-(NDT) instance of Advanced-Quality-Control-Techniques Class -->
+<rdf:Description rdf:about="http://www.example.com/Mechanical-Engineering-Ontology#Non-destructive-Testing-(NDT)">
+    <!-- Label for the individual -->
+    <rdfs:label>Non-destructive-Testing-(NDT)</rdfs:label>
+    <!-- Non-destructive-Testing-(NDT) is an individual (instance) of the Advanced-Quality-Control-Techniques class -->
+    <rdf:type rdf:resource="http://www.example.com/Mechanical-Engineering-Ontology#Advanced-Quality-Control-Techniques"/>
+</rdf:Description>
+
+<!-- Define the Quality-4.0 instance of Advanced-Quality-Control-Techniques Class -->
+<rdf:Description rdf:about="http://www.example.com/Mechanical-Engineering-Ontology#Quality-4.0">
+    <rdfs:label>Quality-4.0</rdfs:label>
+    <!-- Predictive-Maintenance is an individual (instance) of the Advanced-Quality-Control-Techniques class -->
+    <rdf:type rdf:resource="http://www.example.com/Mechanical-Engineering-Ontology#Advanced-Quality-Control-Techniques"/>
+</rdf:Description>
+
+<!--=======================================================================================-->
+
+<!-- OWL Class Definition - Education and Training -->
+<owl:Class rdf:about="http://www.example.com/Mechanical-Engineering-Ontology#Education-and-Training">
+    <rdfs:label>Education and Training</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.example.com/Mechanical-Engineering-Ontology#Mechanical-Engineering"/>
+</owl:Class>
+
+<!-- OWL Class Definition - Educational-Technologies -->
+<owl:Class rdf:about="http://www.example.com/Mechanical-Engineering-Ontology#Educational-Technologies">
+    <rdfs:label>Educational Technologies</rdfs:label>
+    <!-- Subclass of Education-and-Training -->
+    <rdfs:subClassOf rdf:resource="http://www.example.com/Mechanical-Engineering-Ontology#Education-and-Training"/>
+</owl:Class>
+
+<!-- Define the Learning-Management-Systems-(LMS) instance of Educational-Technologies Class -->
+<rdf:Description rdf:about="http://www.example.com/Mechanical-Engineering-Ontology#Learning-Management-Systems-(LMS)">
+    <rdfs:label>Learning-Management-Systems-(LMS)</rdfs:label>
+    <!-- Learning-Management-Systems-(LMS) is an individual (instance) of the Educational-Technologies class -->
+    <rdf:type rdf:resource="http://www.example.com/Mechanical-Engineering-Ontology#Educational-Technologies"/>
+</rdf:Description>
+
+<!-- Define the E-learning-Tools-and-Resources instance of Educational-Technologies Class -->
+<rdf:Description rdf:about="http://www.example.com/Mechanical-Engineering-Ontology#E-learning-Tools-and-Resources">
+    <rdfs:label>E-learning-Tools-and-Resources</rdfs:label>
+    <!-- E-learning-Tools-and-Resources is an individual (instance) of the Educational-Technologies class -->
+    <rdf:type rdf:resource="http://www.example.com/Mechanical-Engineering-Ontology#Educational-Technologies"/>
+</rdf:Description>
+
+<!-- Define the Collaboration-and-Communication-Tools instance of Educational-Technologies Class -->
+<rdf:Description rdf:about="http://www.example.com/Mechanical-Engineering-Ontology#Collaboration-and-Communication-Tools">
+    <rdfs:label>Collaboration-and-Communication-Tools</rdfs:label>
+    <!-- Collaboration-and-Communication-Tools is an individual (instance) of the Educational-Technologies class -->
+    <rdf:type rdf:resource="http://www.example.com/Mechanical-Engineering-Ontology#Educational-Technologies"/>
+</rdf:Description>
+
+<!-- OWL Class Definition - Educational Policy and Governance -->
+<owl:Class rdf:about="http://www.example.com/Mechanical-Engineering-Ontology#Educational-Policy-and-Governance">
+    <rdfs:label>Educational Policy and Governance</rdfs:label>
+    <!-- Subclass of Education-and-Training -->
+    <rdfs:subClassOf rdf:resource="http://www.example.com/Mechanical-Engineering-Ontology#Education-and-Training"/>
+</owl:Class>
+
+<!-- Define the Educational-Reforms instance of Educational-Policy-and-Governance Class -->
+<rdf:Description rdf:about="http://www.example.com/Mechanical-Engineering-Ontology#Educational-Reforms">
+    <rdfs:label>Educational-Reforms</rdfs:label>
+    <!-- Educational-Administration is an individual (instance) of the Educational-Policy-and-Governance class -->
+    <rdf:type rdf:resource="http://www.example.com/Mechanical-Engineering-Ontology#Educational-Policy-and-Governance"/>
+</rdf:Description>
+
+<!--=======================================================================================-->
+
+
+<!-- OWL Class Definition - Education and Training -->
+<owl:Class rdf:about="http://www.example.com/Mechanical-Engineering-Ontology#Manufacturing">
+    <rdfs:label>Manufacturing</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.example.com/Mechanical-Engineering-Ontology#Mechanical-Engineering"/>
+</owl:Class>
+
+<!-- OWL Class Definition - Manufacturing-Processes -->
+<owl:Class rdf:about="http://www.example.com/Mechanical-Engineering-Ontology#Manufacturing-Processes">
+    <rdfs:label>Manufacturing-Processes</rdfs:label>
+    <!-- Subclass of Manufacturing -->
+    <rdfs:subClassOf rdf:resource="http://www.example.com/Mechanical-Engineering-Ontology#Manufacturing"/>
+</owl:Class>
+
+<!-- Define the Material-Removal-Processes instance of Manufacturing-Processes Class -->
+<rdf:Description rdf:about="http://www.example.com/Mechanical-Engineering-Ontology#Material-Removal-Processes">
+    <rdfs:label>Material-Removal-Processes</rdfs:label>
+    <!-- Material-Removal-Processes is an individual (instance) of the Manufacturing-Processes class -->
+    <rdf:type rdf:resource="http://www.example.com/Mechanical-Engineering-Ontology#Manufacturing-Processes"/>
+</rdf:Description>
+
+<!-- Define the Material-Deformation-Processes instance of Manufacturing-Processes Class -->
+<rdf:Description rdf:about="http://www.example.com/Mechanical-Engineering-Ontology#Material-Deformation-Processes">
+    <rdfs:label>Material-Deformation-Processes</rdfs:label>
+    <!-- Material-Deformation-Processes is an individual (instance) of the Manufacturing-Processes class -->
+    <rdf:type rdf:resource="http://www.example.com/Mechanical-Engineering-Ontology#Manufacturing-Processes"/>
+</rdf:Description>
+
+<!-- Define the Additive-Manufacturing instance of Manufacturing-Processes Class -->
+<rdf:Description rdf:about="http://www.example.com/Mechanical-Engineering-Ontology#Additive-Manufacturing">
+    <rdfs:label>Additive-Manufacturing</rdfs:label>
+    <!-- Additive-Manufacturing is an individual (instance) of the Manufacturing-Processes class -->
+    <rdf:type rdf:resource="http://www.example.com/Mechanical-Engineering-Ontology#Manufacturing-Processes"/>
+</rdf:Description>
+
+<!-- OWL Class Definition - Production Automation and Robotics -->
+<owl:Class rdf:about="http://www.example.com/Mechanical-Engineering-Ontology#Production-Automation-and-Robotics">
+    <rdfs:label>Production Automation and Robotics</rdfs:label>
+    <!-- Subclass of Manufacturing -->
+    <rdfs:subClassOf rdf:resource="http://www.example.com/Mechanical-Engineering-Ontology#Manufacturing"/>
+</owl:Class>
+
+<!-- Define the Advanced-Machinery-and-Electronics data property -->
+<owl:DatatypeProperty rdf:about="http://www.example.com/Mechanical-Engineering-Ontology#Advanced-Machinery-and-Electronics"/>
+
+<!-- Define the CNC-Machines instance of Production-Automation-and-Robotics Class -->
+<rdf:Description rdf:about="http://www.example.com/Mechanical-Engineering-Ontology#Robots-and-Automated-Systems-Implementation">
+    <rdfs:label>Robots-and-Automated-Systems-Implementation</rdfs:label>
+    <!-- Educational-Administration is an individual (instance) of the Production-Automation-and-Robotics class -->
+    <rdf:type rdf:resource="http://www.example.com/Mechanical-Engineering-Ontology#Production-Automation-and-Robotics"/>
+    <Mechanical-Engineering-Ontology:Advanced-Machinery-and-Electronics>CNC-Machines</Mechanical-Engineering-Ontology:Advanced-Machinery-and-Electronics>
+    <Mechanical-Engineering-Ontology:Advanced-Machinery-and-Electronics>3D-Printers</Mechanical-Engineering-Ontology:Advanced-Machinery-and-Electronics>
+    <Mechanical-Engineering-Ontology:Advanced-Machinery-and-Electronics>Siemens-MindSphere</Mechanical-Engineering-Ontology:Advanced-Machinery-and-Electronics>
+    <Mechanical-Engineering-Ontology:Advanced-Machinery-and-Electronics>Yaskawa Motoman MH Series</Mechanical-Engineering-Ontology:Advanced-Machinery-and-Electronics>
+    <Mechanical-Engineering-Ontology:Advanced-Machinery-and-Electronics>Kawasaki Robotics ZX Series</Mechanical-Engineering-Ontology:Advanced-Machinery-and-Electronics>
+    <Mechanical-Engineering-Ontology:Advanced-Machinery-and-Electronics>ABB IRB 6700 Series</Mechanical-Engineering-Ontology:Advanced-Machinery-and-Electronics>
+    <Mechanical-Engineering-Ontology:Advanced-Machinery-and-Electronics>Injection Molding Machines</Mechanical-Engineering-Ontology:Advanced-Machinery-and-Electronics>
+    <Mechanical-Engineering-Ontology:Advanced-Machinery-and-Electronics>Coordinate Measuring Machines (CMM)</Mechanical-Engineering-Ontology:Advanced-Machinery-and-Electronics>
+</rdf:Description>
+
+<!-- Define the contributes property -->
+<owl:ObjectProperty rdf:about="http://www.example.com/Mechanical-Engineering-Ontology#contributes"/>
+<!-- Define the implements property -->
+<owl:ObjectProperty rdf:about="http://www.example.com/Mechanical-Engineering-Ontology#implements"/>
+<!-- Define the implements property -->
+<owl:ObjectProperty rdf:about="http://www.example.com/Mechanical-Engineering-Ontology#involvesIn"/>
+
+<!-- OWL Class Definition - Education and Training -->
+<owl:Class rdf:about="http://www.example.com/Mechanical-Engineering-Ontology#Computer-Science">
+    <rdfs:label>Computer-Science</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<!-- Define the CNC-Machines instance of Production-Automation-and-Robotics Class -->
+<rdf:Description rdf:about="http://www.example.com/Mechanical-Engineering-Ontology#Software-Development">
+    <rdfs:label>Software-Development</rdfs:label>
+    <!-- Educational-Administration is an individual (instance) of the Production-Automation-and-Robotics class -->
+    <rdf:type rdf:resource="http://www.example.com/Mechanical-Engineering-Ontology#Computer-Science"/>
+
+    <Mechanical-Engineering-Ontology:implements rdf:resource="http://www.example.com/Mechanical-Engineering-Ontology#Learning-Management-Systems-(LMS)"/>
+    <Mechanical-Engineering-Ontology:implements rdf:resource="http://www.example.com/Mechanical-Engineering-Ontology#E-learning-Tools-and-Resources"/>
+    <Mechanical-Engineering-Ontology:implements rdf:resource="http://www.example.com/Mechanical-Engineering-Ontology#Computer-Aided-Design-(CAD)"/>
+    <Mechanical-Engineering-Ontology:implements rdf:resource="http://www.example.com/Mechanical-Engineering-Ontology#Collaboration-and-Communication-Tools"/>
+
+
+</rdf:Description>
+
+<!-- Define the CNC-Machines instance of Production-Automation-and-Robotics Class -->
+<rdf:Description rdf:about="http://www.example.com/Mechanical-Engineering-Ontology#Machine-Learning-and-Artificial-Intelligence-(AI)">
+    <rdfs:label>Machine-Learning-and-Artificial-Intelligence-(AI)L</rdfs:label>
+    <!-- Educational-Administration is an individual (instance) of the Production-Automation-and-Robotics class -->
+    <rdf:type rdf:resource="http://www.example.com/Mechanical-Engineering-Ontology#Computer-Science"/>
+
+    <Mechanical-Engineering-Ontology:contributes rdf:resource="http://www.example.com/Mechanical-Engineering-Ontology#Ontology-Development"/>
+    <Mechanical-Engineering-Ontology:contributes rdf:resource="http://www.example.com/Mechanical-Engineering-Ontology#Text-Mining-and-Natural-Language-Processing-(NLP)"/>
+    <Mechanical-Engineering-Ontology:contributes rdf:resource="http://www.example.com/Mechanical-Engineering-Ontology#Annotation-and-Semantic-Search"/>
+    <Mechanical-Engineering-Ontology:contributes rdf:resource="http://www.example.com/Mechanical-Engineering-Ontology#Knowledge-Graphs"/>
+
+    <Mechanical-Engineering-Ontology:contributes rdf:resource="http://www.example.com/Mechanical-Engineering-Ontology#Machine-Vision-Inspection"/>
+    <Mechanical-Engineering-Ontology:contributes rdf:resource="http://www.example.com/Mechanical-Engineering-Ontology#Quality-4.0"/>
+
+    <Mechanical-Engineering-Ontology:involvesIn rdf:resource="http://www.example.com/Mechanical-Engineering-Ontology#Software-Development"/>
+
+</rdf:Description>
+
+</rdf:RDF>
+
